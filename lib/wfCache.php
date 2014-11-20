@@ -29,6 +29,8 @@ class wfCache {
 				}
 			}
 		}
+		add_action('publish_future_post', 'wfCache::action_publishPost');
+		add_action('xmlrpc_publish_post', 'wfCache::action_publishPost');
 		add_action('wordfence_cache_clear', 'wfCache::scheduledCacheClear');
 		add_action('wordfence_update_blocked_IPs', 'wfCache::scheduleUpdateBlockedIPs');
 		add_action('comment_post', 'wfCache::action_commentPost'); //Might not be logged in
